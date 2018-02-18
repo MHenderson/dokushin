@@ -1,3 +1,5 @@
+![](https://travis-ci.org/MHenderson/sudoku.svg?branch=master)
+
 ## Installation
 
 The ``sudoku.py`` module depends on the following packages:
