@@ -20,10 +20,10 @@ def n_cells(boxsize): return n_rows(boxsize)*n_cols(boxsize)
 
 def cell(row, column, boxsize): return (row - 1) * n_rows(boxsize) + column
 def column(cell, boxsize): return (cell - 1) % n_rows(boxsize) + 1
-def row(cell, boxsize): return (cell - 1) / n_cols(boxsize) + 1
+def row(cell, boxsize): return (cell - 1) // n_cols(boxsize) + 1
 
 def box_representative(box, boxsize):
-    i = boxsize * ((box - 1) / boxsize)
+    i = boxsize * ((box - 1) // boxsize)
     j = boxsize * ((box - 1) % boxsize) + 1
     return boxsize**2*i + j
 
@@ -31,26 +31,26 @@ def box_representative(box, boxsize):
 # Convenient ranges
 ####################################################################
 
-def cells(boxsize): return range(1, n_cells(boxsize) + 1)
-def symbols(boxsize): return range(1, n_symbols(boxsize) + 1)
-def rows(boxsize): return range(1, n_rows(boxsize) + 1)
-def cols(boxsize): return range(1, n_cols(boxsize) + 1)
-def boxes(boxsize): return range(1, n_boxes(boxsize) + 1)
+def cells(boxsize): return range(1, int(n_cells(boxsize) + 1))
+def symbols(boxsize): return range(1, int(n_symbols(boxsize) + 1))
+def rows(boxsize): return range(1, int(n_rows(boxsize) + 1))
+def cols(boxsize): return range(1, int(n_cols(boxsize) + 1))
+def boxes(boxsize): return range(1, int(n_boxes(boxsize) + 1))
 
 def row_r(row, boxsize):
     """Cell labels in 'row' of Sudoku puzzle of dimension 'boxsize'."""
     nr = n_rows(boxsize)
-    return range(nr * (row - 1) + 1, nr * row + 1)
+    return range(int(nr * (row - 1) + 1), int(nr * row + 1))
 
 def col_r(column, boxsize):
     """Cell labels in 'column' of Sudoku puzzle of dimension 'boxsize'."""
     nc = n_cols(boxsize)
     ncl = n_cells(boxsize)
-    return range(column, ncl + 1 - (nc - column), nc)
+    return range(int(column), int(ncl + 1 - (nc - column)), int(nc))
 
 def box_r(box, boxsize):
     """Cell labels in 'box' of Sudoku puzzle of dimension 'boxsize'."""
-    return [box_representative(box, boxsize) + j + k - 1 for j in range(0, boxsize * n_rows(boxsize), n_cols(boxsize)) for k in range(1, boxsize + 1)]
+    return [box_representative(box, boxsize) + j + k - 1 for j in range(0, int(boxsize * n_rows(boxsize)), int(n_cols(boxsize))) for k in range(1, int(boxsize + 1))]
 
 def cells_by_row(boxsize):
     """cells_by_row(boxsize) -> list
@@ -70,18 +70,6 @@ def cells_by_box(boxsize):
     Returns a list of cell labels ordered by box for the given boxsize."""
     return [box_r(box, boxsize) for box in boxes(boxsize)]
 
-def puzzle_rows(puzzle, boxsize):
-    """Cell values, ordered by row."""
-    return [map(puzzle.get, row_r(row, boxsize)) for row in rows(boxsize)]
-
-def puzzle_columns(puzzle, boxsize):
-    """Cell values, ordered by column."""
-    return [map(puzzle.get, col_r(column, boxsize)) for column in cols(boxsize)]
-
-def puzzle_boxes(puzzle, boxsize):
-    """Cell values, ordered by box."""
-    return [map(puzzle.get, box_r(box, boxsize)) for box in boxes(boxsize)]
-
 ####################################################################
 # Convenient functions
 ####################################################################
@@ -96,7 +84,7 @@ def flatten(list_of_lists):
 
 def int_to_printable(i):
     """Convert an integer to a printable character."""
-    return string.printable[i]
+    return string.printable[int(i)]
 
 def printable_to_int(c):
     """Convert a printable character to a integer."""
