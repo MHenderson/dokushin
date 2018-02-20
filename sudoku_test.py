@@ -1,8 +1,8 @@
 import pytest
+import sudoku
 
-def f():
-    raise SystemExit(1)
+def test_0():
+    assert len(sudoku.cells(0))==len([])
+    assert len(sudoku.symbols(0))==len([])
+    assert len(sudoku.cells_by_row(0))==len([])
 
-def test_mytest():
-    with pytest.raises(SystemExit):
-        f()
