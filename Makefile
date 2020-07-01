@@ -1,7 +1,7 @@
 doc:
-	pdoc --html sudoku --html-dir public
-	mv public/sudoku/index.html public/index.html
-	rm -rf public/sudoku
+	pdoc --html sussudoku --html-dir public
+	mv public/sussudoku/index.html public/index.html
+	rm -rf public/sussudoku
 
 install:
 	pip install .
