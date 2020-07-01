@@ -1,18 +1,7 @@
-![](https://travis-ci.org/MHenderson/sudoku.svg?branch=master)
+## sussudoku
 
-## Installation
+Install: https://pypi.org/project/sussudoku/
 
-The ``sudoku.py`` module depends on the following packages:
+Documentation: https://mhenderson1.gitlab.io/sussudoku/
 
-* python-constraint
-* NetworkX
-* SymPy
-* GLPK
-
-No installation is required. Just put the module somewhere on your Python path
-or ammend your Python path to include the src folder.
-
-## Tutorial
-
-A tutorial can be found at: http://nbviewer.ipython.org/6416294
-
+http://nbviewer.ipython.org/6416294
