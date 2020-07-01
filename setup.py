@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(name='sudoku',
-      version=0.1,
-      description="",
-      url="https://github.com/MHenderson/sudoku",
+      version=0.2,
+      description="Solve Sudoku with Python.",
+      url="https://gitlab.com/MHenderson1/sudoku",
       author="Matthew Henderson",
       author_email="matthew.james.henderson@gmail.com",
       license="MIT",
