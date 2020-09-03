@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+networkx = ">=2"
+python-constraint = ">=1.3.1"
+pytest = "*"
+sympy = "*"
+glpk = "*"
+
+[requires]
+python_version = "3.8"
