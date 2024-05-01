@@ -23,7 +23,7 @@ def row(cell, boxsize): return (cell - 1) / n_cols(boxsize) + 1
 def box_representative(box, boxsize):
     i = boxsize * ((box - 1) / boxsize)
     j = boxsize * ((box - 1) % boxsize) + 1
-    return boxsize**2*i + j
+    return int(boxsize ** 2 * i + j)
 
 ####################################################################
 # Convenient ranges
