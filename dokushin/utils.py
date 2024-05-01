@@ -1,8 +1,4 @@
-from __future__ import print_function
-
 import random, itertools, string, operator, copy
-
-import constraint, networkx, sympy, glpk
 
 ####################################################################
 # Basic parameters
