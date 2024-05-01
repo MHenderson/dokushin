@@ -1,9 +1,38 @@
 import dokushin
 
-d = { 1: 2,  2: 5,  5: 3,  7: 9,  9: 1, 11: 1, 15: 4, 19: 4, 21: 7, 25: 2, 27: 8, 30: 5, 31: 2, 41: 9, 42: 8, 43: 1, 47: 4, 51: 3, 58: 3, 59: 6, 62: 7, 63: 2, 65: 7, 72: 3, 73: 9, 75: 3, 79: 6, 81: 4}
+s = """
+    2 5 . . 3 . 9 . 1
+    . 1 . . . 4 . . .
+    4 . 7 . . . 2 . 8
+    . . 5 2 . . . . .
+    . . . . 9 8 1 . .
+    . 4 . . . 3 . . .
+    . . . 3 6 . . 7 2
+    . 7 . . . . . . 3
+    9 . 3 . . . 6 . 4
+    """
 
-p = dokushin.Puzzle(d, 3)
+p = dokushin.Puzzle(s, 3, format = 's')
 
-p = dokushin.random_puzzle(7, 2)
+#dokushin.solve(p)
 
-dokushin.solve(p)
+#print(p)
+
+#print(p.fixed)
+
+#dokushin.solve_as_CP(p.fixed, 3)
+
+cp = dokushin.puzzle_as_CP(p.fixed, 3)
+
+cp.getSolution()
+
+#cp._getArgs()
+
+#print(cp.__dir__())
+
+#print(cp._constraints)
+
+#print(dokushin.cells_by_box(3))
+#print(dokushin.box_r(10, 3))
+#print(dokushin.col_r(10, 3))
+#print(dokushin.box_representative(10, 3))
