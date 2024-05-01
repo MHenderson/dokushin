@@ -4,5 +4,3 @@
 
 * Import code from old sussudoku project.
 * Use Poetry for dependency management.
-* Packaging workflow.
-* Publishing workflow.
