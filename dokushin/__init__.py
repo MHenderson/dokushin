@@ -11,7 +11,7 @@ def column(cell, boxsize): return (cell - 1) % n_rows(boxsize) + 1
 def row(cell, boxsize): return (cell - 1) / n_cols(boxsize) + 1
 
 def box_representative(box, boxsize):
-    i = boxsize * ((box - 1) / boxsize)
+    i = boxsize * ((box - 1) // boxsize)
     j = boxsize * ((box - 1) % boxsize) + 1
     return int(boxsize ** 2 * i + j)
 
